@@ -5,7 +5,7 @@ class Test extends Component {
     render(){
         return(
             <div>
-                <p>I like pineapples</p>
+                <a href={this.props.href}>{this.props.message}</a>
             </div>
         )
     }

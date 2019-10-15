@@ -7,7 +7,7 @@ function App() {
   return (
     <div>
         <Test
-            message="This is component 1"
+            message="Google"
         />
         <Test message="This is component 2"/>
         <Test message="This is component 3"/>
