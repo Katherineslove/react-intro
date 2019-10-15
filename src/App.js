@@ -6,11 +6,11 @@ import Test from './Test';
 function App() {
   return (
     <div>
-        <Test />
-        <Test />
-        <Test />
-        <Test />
-        <Test />
+        <Test message="This is component 1"/>
+        <Test message="This is component 2"/>
+        <Test message="This is component 3"/>
+        <Test message="This is component 4"/>
+        <Test message="This is component 5"/>
     </div>
   );
 }
