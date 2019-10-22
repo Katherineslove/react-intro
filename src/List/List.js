@@ -8,6 +8,9 @@ class List extends Component {
             <div className="listContainer">
                 <h1>• Shopping List •</h1>
                 <Form />
+                <div className="list">
+                    <Item />
+                </div>
             </div>
         )
     }
