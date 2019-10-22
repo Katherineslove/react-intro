@@ -5,16 +5,16 @@ import Test from './Test';
 
 function App() {
   return (
-    <div>
+      <div>
         <Test
-            message="Google"
+          message="Google"
+          href="http://www.google.com"
         />
-        <Test message="This is component 2"/>
-        <Test message="This is component 3"/>
-        <Test message="This is component 4"/>
-        <Test message="This is component 5"/>
-        <Test message="Hello World"/>
-    </div>
+        <Test
+          message="Facebook"
+          href="http://www.facebook.com"
+          />
+      </div>
   );
 }
 
