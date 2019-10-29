@@ -35,6 +35,29 @@ class List extends Component {
 
     handleChangeInputValue = (text) => {
         let {currentItem} = this.state;
+        currentItem.value = text;
+        this.setState({
+            currentItem: currentItem
+        })
+    }
+
+    handleSubmit = () => {
+        let {allItems, currentItem} = this.state;
+
+        const newItem = {
+            id: allItems.length + 1,
+            text: currentItem.value
+        }
+
+        allItems.push(newItem);
+
+        this.setState({
+            currentItem: {
+                id: null,
+                value: ''
+            },
+            allItems: allItems
+        })
     }
 
     render(){
@@ -43,8 +66,9 @@ class List extends Component {
             <div className="listContainer">
             <h1>• Shopping List •</h1>
             <Form
-                item = {this.state.currentItem}
-                changeInputValue = {this.handleChangeInputValue}
+            item = {this.state.currentItem}
+            changeInputValue = {this.handleChangeInputValue}
+            submit = {this.handleSubmit}
             />
             <div className="list">
             {
