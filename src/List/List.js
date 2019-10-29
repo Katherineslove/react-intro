@@ -33,8 +33,8 @@ class List extends Component {
         }
     }
 
-    handleChangeInputValue = () => {
-        console.log('the input value has been changed from Form.js');
+    handleChangeInputValue = (text) => {
+        let {currentItem} = this.state;
     }
 
     render(){

@@ -5,8 +5,8 @@ import Button from '../Button/Button';
 class Form extends Component {
 
     changeInput = (e) => {
-        console.log(e.target.value);
-        this.props.changeInputValue();
+        // console.log(e.target.value);
+        this.props.changeInputValue(e.target.value);
     }
 
     submitForm = (e) => {
