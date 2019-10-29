@@ -33,13 +33,18 @@ class List extends Component {
         }
     }
 
+    handleChangeInputValue = () => {
+        console.log('the input value has been changed from Form.js');
+    }
+
     render(){
         console.log(this.state.allItems);
         return(
             <div className="listContainer">
             <h1>• Shopping List •</h1>
             <Form
-                item={this.state.currentItem}
+                item = {this.state.currentItem}
+                changeInputValue = {this.handleChangeInputValue}
             />
             <div className="list">
             {

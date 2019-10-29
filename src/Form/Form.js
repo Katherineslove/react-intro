@@ -4,20 +4,10 @@ import Button from '../Button/Button';
 
 class Form extends Component {
 
-    // constructor(props){
-    //     super(props);
-    //
-    //     this.changeInput = this.changeInput.bind(this);
-    // }
-    //
-    // changeInput(e){
-    //     console.log(e.target.value);
-    // }
-
     changeInput = (e) => {
         console.log(e.target.value);
+        this.props.changeInputValue();
     }
-
 
     submitForm = (e) => {
         e.preventDefault();
