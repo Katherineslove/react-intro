@@ -60,6 +60,26 @@ class List extends Component {
         })
     }
 
+    handleDelete = (idOfItem) => {
+        // console.log('need to delete');
+        // console.log(idOfItem);
+        const { allItems } = this.state;
+        for (let i = 0; i < allItems.length; i++) {
+            if (allItems[i].id === idOfItem) {
+                allItems.splice(i, 1);
+                break;
+            }
+        }
+        for (let i = 0; i < allItems.length; i++) {
+            allItems[i].id = i + 1
+        }
+        // console.log(allItems);
+
+        this.setState({
+            allItems: allItems
+        })
+    }
+
     render(){
         console.log(this.state.allItems);
         return(
@@ -76,6 +96,7 @@ class List extends Component {
                     return <Item
                     key = {singleItem.id}
                     itemInfo= {singleItem}
+                    deleteItem = {this.handleDelete}
                     />
                 })
             }
