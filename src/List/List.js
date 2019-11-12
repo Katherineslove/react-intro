@@ -41,16 +41,25 @@ class List extends Component {
         })
     }
 
+
     handleSubmit = () => {
         let {allItems, currentItem} = this.state;
 
-        const newItem = {
-            id: allItems.length + 1,
-            text: currentItem.value
+        if (currentItem.id === null) {
+            const newItem = {
+                id: allItems.length + 1,
+                text: currentItem.value
+            }
+
+            allItems.push(newItem);
+        } else {
+            for (let i = 0; i < allItems.length; i++) {
+                if (allItems[i].id === currentItem.id) {
+                    allItems[i].text = currentItem.value
+                    break;
+                }
+            }
         }
-
-        allItems.push(newItem);
-
         this.setState({
             currentItem: {
                 id: null,
@@ -61,8 +70,6 @@ class List extends Component {
     }
 
     handleDelete = (idOfItem) => {
-        // console.log('need to delete');
-        // console.log(idOfItem);
         const { allItems } = this.state;
         for (let i = 0; i < allItems.length; i++) {
             if (allItems[i].id === idOfItem) {
@@ -78,6 +85,20 @@ class List extends Component {
         this.setState({
             allItems: allItems
         })
+    }
+
+    handleEdit = (idOfItem) => {
+        const { allItems } = this.state;
+        for (let i = 0; i < allItems.length; i++) {
+            if (allItems[i].id === idOfItem) {
+                this.setState({
+                    currentItem: {
+                        id: idOfItem,
+                        value: allItems[i].text
+                    }
+                });
+            }
+        }
     }
 
     render(){
@@ -97,6 +118,7 @@ class List extends Component {
                     key = {singleItem.id}
                     itemInfo= {singleItem}
                     deleteItem = {this.handleDelete}
+                    editItem = {this.handleEdit}
                     />
                 })
             }

@@ -15,10 +15,18 @@ class Form extends Component {
     }
 
     render(){
+
+        let buttonLabel;
+        if (this.props.item.id === null) {
+            buttonLabel = 'Add Item';
+        } else {
+            buttonLabel = 'Edit Item';
+        }
+
         return(
             <form className="searchForm" onSubmit={this.submitForm}>
                 <input onChange={this.changeInput} value={this.props.item.value} className="searchBar"/>
-                <Button btnText="Add New Item"/>
+                <Button btnText={buttonLabel}/>
             </form>
         )
     }
